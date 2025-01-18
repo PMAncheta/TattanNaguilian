@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomePage">
+
+    <ScrollView
+        android:id="@+id/wholebodyScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/mainScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/headerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="12dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/lagonst" />
+
+                <TextView
+                    android:id="@+id/titleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:text="Municipal of Naguilian, La Union\n Home of Basi"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/welcomeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:background="@color/lightgreen"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/welcomeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="17dp"
+                    android:text="WELCOME!"
+                    android:textColor="@color/black"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/guideText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:gravity="end"
+                    android:text="Tour Guide and History\n of Every Places"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:id="@+id/peanutGuy"
+                    android:layout_width="70dp"
+                    android:layout_height="110dp"
+                    android:layout_marginLeft="235dp"
+                    android:layout_marginTop="-85dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/basuka" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mappingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dirtyWhite"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/smlltlk"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:text="Small Talk Communication"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/textViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:textAlignment="center" />
+
+                <fragment
+                    android:id="@+id/maps"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Tourist Places"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+                <LinearLayout
+                    android:id="@+id/body"
+                    android:layout_width="match_parent"
+                    android:layout_height="165dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/municipalImage"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="-20dp"
+                        android:layout_marginRight="30dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/municipality" />
+
+                    <TextView
+                        android:id="@+id/municipalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-140dp"
+                        android:layout_marginTop="46dp"
+                        android:gravity="center"
+                        android:text="Municipality of\nNaguilian, La Union"
+                        android:textColor="@color/black" />
+
+                    <ImageView
+                        android:id="@+id/churchImage"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="-20dp"
+                        android:layout_marginLeft="10dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/church1" />
+
+                    <TextView
+                        android:id="@+id/churchText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-101dp"
+                        android:layout_marginTop="46dp"
+                        android:gravity="center"
+                        android:text="Saint Augustine\nChurch"
+                        android:textColor="@color/black" />
+
+                    <ImageView
+                        android:id="@+id/basiImage"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="-20dp"
+                        android:layout_marginLeft="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/basi" />
+
+                    <TextView
+                        android:id="@+id/basiText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-91dp"
+                        android:layout_marginTop="39dp"
+                        android:text="Basi Festival"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/aboutusLayout"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@color/green"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/aboutText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="10dp"
+                    android:text="ABOUT US"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/contentAboutUs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-120dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Naguilian is a 1st class municipality in the\nprovince of La Union, Philippines. It has a\npopulation of 54,221 in the latest census of\nPhilippines Statistics Authority (PSA) in year\n2015."
+                    android:textColor="@color/white"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/contactText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="CONTACT WITH US"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/contentContactWithUs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-107dp"
+                    android:layout_marginTop="25dp"
+                    android:text=" Municipal Hall\n Naguilian Road\n Ortiz, Naguilian\n La Union, Philippines\n 2511\n (072) 609 1811"
+                    android:textColor="@color/white"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/connectWithUs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-295dp"
+                    android:layout_marginTop="100dp"
+                    android:text="CONNECT WITH US"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/pisbuuk"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="-65dp"
+                    android:layout_marginTop="130dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/fb" />
+
+                <ImageView
+                    android:id="@+id/logoFooter"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="140dp"
+                    android:layout_marginTop="105dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/lagonst" />
+
+                <ImageView
+                    android:id="@+id/smallclown"
+                    android:layout_width="10dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="145dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/basuka" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/lightgreen"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/navigationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:layout_marginRight="30dp"
+            android:text="Navigation"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/lightgreen"/>
+
+        <Button
+            android:id="@+id/marketingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Product"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/lightgreen"/>
+    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
