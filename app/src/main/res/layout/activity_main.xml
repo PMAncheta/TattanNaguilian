@@ -67,7 +67,7 @@
             android:backgroundTint="@color/whitegreen"
             android:layout_gravity="center"
             android:layout_marginTop="230dp"
-            android:text="Umili Kayo"
+            android:text="Umay Kayon"
             android:textColor="@color/black"/>
     </LinearLayout>
 

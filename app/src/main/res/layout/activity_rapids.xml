@@ -162,7 +162,7 @@
             android:layout_marginLeft="15dp"
             android:backgroundTint="@color/lightgreen"
             android:padding="1dp"
-            android:text="Market"
+            android:text="Product"
             android:textColor="@color/black" />
     </LinearLayout>
 </RelativeLayout>
