@@ -2,6 +2,7 @@ package com.example.tattannaguilian;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,13 +16,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class marketing extends AppCompatActivity {
-
-    private ListView listView;
-    private ArrayAdapter<String> adapter;
-    private ArrayList<String> dictionaryList;
-    private HashMap<String, String> dictionaryDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,36 @@ public class marketing extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(marketing.this, touristCategory.class);
                 startActivity(intent);
+            }
+        });
+
+        // Fetch data from Supabase
+        fetchDataFromSupabase();
+    }
+
+    private void fetchDataFromSupabase() {
+        // Use SupabaseClient.getClient() to create the Retrofit instance
+        SupabaseService service = SupabaseClient.getClient().create(SupabaseService.class);
+
+        // Call Supabase API to fetch data
+        Call<List<YourModel>> call = service.getItems("*"); // Fetch all columns
+        call.enqueue(new Callback<List<YourModel>>() {
+            @Override
+            public void onResponse(Call<List<YourModel>> call, Response<List<YourModel>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    List<YourModel> items = response.body();
+                    // Log the data fetched from Supabase
+                    for (YourModel item : items) {
+                        Log.d("Supabase", "Item: " + item.getName() + " - " + item.getDescription());
+                    }
+                } else {
+                    Log.e("Supabase", "Error: " + response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<YourModel>> call, Throwable t) {
+                Log.e("Supabase", "Failed to fetch data", t);
             }
         });
     }
